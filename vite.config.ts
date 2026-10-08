@@ -4,6 +4,9 @@ export default defineConfig({
 	pack: {
 		entry: ['src/index.ts'],
 		format: ['esm', 'cjs'],
+		outputOptions: {
+			exports: 'named',
+		},
 		dts: true,
 		exports: true,
 		target: 'node22',

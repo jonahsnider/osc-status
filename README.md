@@ -18,6 +18,14 @@ oscStatus.idle();
 oscStatus.clear();
 ```
 
+With CommonJS (please just use ESM):
+
+```js
+const oscStatus = require('osc-status').default;
+
+oscStatus.working();
+```
+
 ## Usage
 
 Methods write to stderr when it is a TTY and return whether a report was emitted.
