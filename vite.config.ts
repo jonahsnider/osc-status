@@ -30,6 +30,6 @@ export default defineConfig({
 		singleQuote: true,
 		useTabs: true,
 		printWidth: 120,
-		ignorePatterns: ['dist/**', 'temp/**', 'etc/*.api.md'],
+		ignorePatterns: ['dist/**', 'temp/**', 'etc/*.api.md', 'CHANGELOG.md'],
 	},
 });
