@@ -1,6 +1,6 @@
 {
 	"name": "osc-status",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Report terminal program status with OSC 7501.",
 	"keywords": [
 		"osc",
