@@ -15,7 +15,7 @@ const oscStatus: {
     }, options?: WriteStatusOptions) => boolean;
     readonly done: (report?: StatusDetails, options?: WriteStatusOptions) => boolean;
     readonly blocked: (report?: StatusDetails & {
-        kind?: "permission" | "question" | "auth";
+        kind?: 'permission' | 'question' | 'auth';
         progress?: number;
     }, options?: WriteStatusOptions) => boolean;
     readonly error: (report?: StatusDetails, options?: WriteStatusOptions) => boolean;
