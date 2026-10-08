@@ -8,22 +8,23 @@
 export function encodeStatus<State extends StatusState>(state: State, report?: StatusReport<State>): string;
 
 // @public
-export const oscStatus: {
-    idle: (report?: StatusDetails, options?: WriteStatusOptions) => boolean;
-    working: (report?: StatusDetails & {
+const oscStatus: {
+    readonly idle: (report?: StatusDetails, options?: WriteStatusOptions) => boolean;
+    readonly working: (report?: StatusDetails & {
         progress?: number;
     }, options?: WriteStatusOptions) => boolean;
-    done: (report?: StatusDetails, options?: WriteStatusOptions) => boolean;
-    blocked: (report?: StatusDetails & {
+    readonly done: (report?: StatusDetails, options?: WriteStatusOptions) => boolean;
+    readonly blocked: (report?: StatusDetails & {
         kind?: "permission" | "question" | "auth";
         progress?: number;
     }, options?: WriteStatusOptions) => boolean;
-    error: (report?: StatusDetails, options?: WriteStatusOptions) => boolean;
-    clear: (report?: Pick<StatusDetails, "id">, options?: WriteStatusOptions) => boolean;
+    readonly error: (report?: StatusDetails, options?: WriteStatusOptions) => boolean;
+    readonly clear: (report?: Pick<StatusDetails, "id">, options?: WriteStatusOptions) => boolean;
 };
+export default oscStatus;
 
 // @public (undocumented)
-export type ReportsByState = {
+type ReportsByState = {
     idle: StatusDetails;
     working: StatusDetails & {
         progress?: number;
@@ -38,7 +39,7 @@ export type ReportsByState = {
 };
 
 // @public (undocumented)
-export type StatusDetails = {
+type StatusDetails = {
     id?: string;
     app?: string;
     title?: string;

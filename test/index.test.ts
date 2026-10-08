@@ -1,7 +1,7 @@
 import { Buffer } from 'node:buffer';
 import { stderr } from 'node:process';
 import { describe, expect, it, vi } from 'vite-plus/test';
-import { encodeStatus, oscStatus } from '../src/index.ts';
+import oscStatus, { encodeStatus } from '../src/index.ts';
 
 describe('encodeStatus', () => {
 	it.each(['idle', 'working', 'done', 'blocked', 'error', 'clear'] as const)('encodes %s', (state) => {

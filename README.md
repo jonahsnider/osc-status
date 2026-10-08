@@ -8,7 +8,7 @@ npm install osc-status
 ```
 
 ```ts
-import { oscStatus } from 'osc-status';
+import oscStatus from 'osc-status';
 
 oscStatus.working({ app: 'deploy', message: 'Deploying', progress: 50 });
 oscStatus.blocked({ kind: 'permission', message: 'Approve production deploy?' });

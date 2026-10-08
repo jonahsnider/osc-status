@@ -106,11 +106,13 @@ function stateWriter<State extends StatusState>(state: State) {
 }
 
 /** Write a report. Returns true if emitted, false if disabled. */
-export const oscStatus = {
+const oscStatus = {
 	idle: stateWriter('idle'),
 	working: stateWriter('working'),
 	done: stateWriter('done'),
 	blocked: stateWriter('blocked'),
 	error: stateWriter('error'),
 	clear: stateWriter('clear'),
-};
+} as const;
+
+export default oscStatus;
