@@ -1,0 +1,32 @@
+name: Release Please
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  release-please:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Release Please
+        uses: googleapis/release-please-action@v5
+        id: release
+        with:
+          release-type: node
+      - uses: actions/checkout@v7
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: voidzero-dev/setup-vp@v1.21.1
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          cache: true
+      - run: vp pack
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Publish to npm
+        run: pnpm publish --provenance --access public
+        if: ${{ steps.release.outputs.release_created }}
