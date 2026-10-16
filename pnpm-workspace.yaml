@@ -11,7 +11,7 @@ minimumReleaseAgeExclude:
   - vite-plus@1.1.0
 overrides:
   vite: npm:@voidzero-dev/vite-plus-core@1.2.0
-  vitest: 5.0.4
+  vitest: 5.0.5
 peerDependencyRules:
   allowedVersions:
     # Vite+ replaces upstream Vite with its own versioned core.
