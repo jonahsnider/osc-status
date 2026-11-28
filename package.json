@@ -43,7 +43,7 @@
 		"prepack": "pnpm build"
 	},
 	"devDependencies": {
-		"@microsoft/api-extractor": "7.60.1",
+		"@microsoft/api-extractor": "7.60.2",
 		"@tsconfig/recommended": "1.0.14",
 		"@tsconfig/strictest": "2.0.9",
 		"@types/node": "26.6.11",
